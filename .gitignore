@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+
+# Prisma
+.prisma/
+
+# Environment Variables
+.env
+
+# NPM package-lock files (optional but recommended to include for consistency)
+package-lock.json
+
+# Docker-related
+docker-compose.override.yml
+
+# Logs and temporary files
+*.log
+*.tmp
+
