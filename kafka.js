@@ -7,7 +7,10 @@ const prisma = new PrismaClient();
 // Kafka Setup
 const kafka = new Kafka({
   clientId: "polling-system",
-  brokers: ["localhost:9093"], // Kafka broker URL (use localhost if running locally)
+  brokers: ["localhost:29092"], // Kafka broker URL (use localhost if running locally)
+  //Setting the connection timeout to 10 seconds
+  connectionTimeout: 10000,
+  requestTimeout: 10000,
 });
 
 const producer = kafka.producer();
