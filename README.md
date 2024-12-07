@@ -30,7 +30,7 @@ This is a backend system for a **high-concurrency polling application** built us
 
 Follow these steps to set up and run the project locally:
 
-### 1. **Clone the Repository**
+### **Clone the Repository**
 
 ```bash
 git clone https://github.com/ShivanshTiwari01/polling-system.git
@@ -101,64 +101,64 @@ This will start the server on port 3000 (or whatever port is specified in the .e
 
 ## API Endpoints
 
-1. Create Poll
-   Endpoint: POST /polls
-   Description: Allows users to create a new poll with multiple options.
-   Request Body:
-   json
-   Copy code
-   {
-   "question": "What is your favorite color?",
-   "options": ["Red", "Blue", "Green"]
-   }
-   Response:
-   json
-   Copy code
-   {
-   "id": 1,
-   "question": "What is your favorite color?",
-   "options": [
-   { "id": 1, "text": "Red", "votes": 0 },
-   { "id": 2, "text": "Blue", "votes": 0 },
-   { "id": 3, "text": "Green", "votes": 0 }
-   ]
-   }
-2. Vote on a Poll
-   Endpoint: POST /polls/:id/vote
-   Description: Allows users to vote on a specific option in a poll.
-   Request Body:
-   json
-   Copy code
-   {
-   "optionId": 1
-   }
-   Response: Status 200, "Vote submitted".
-3. Get Poll Results
-   Endpoint: GET /polls/:id
-   Description: Retrieves the current results for a poll.
-   Response:
-   json
-   Copy code
-   {
-   "id": 1,
-   "question": "What is your favorite color?",
-   "options": [
-   { "id": 1, "text": "Red", "votes": 5 },
-   { "id": 2, "text": "Blue", "votes": 3 },
-   { "id": 3, "text": "Green", "votes": 1 }
-   ]
-   }
-4. Leaderboard
-   Endpoint: GET /leaderboard
-   Description: Retrieves a global leaderboard ranking the most popular poll options across all active polls.
-   Response:
-   json
-   Copy code
-   [
-   { "pollId": 1, "optionId": 1, "text": "Red", "votes": 5 },
-   { "pollId": 1, "optionId": 2, "text": "Blue", "votes": 3 },
-   { "pollId": 2, "optionId": 1, "text": "Pizza", "votes": 10 }
-   ]
+- 1. Create Poll
+     Endpoint: POST /polls
+     Description: Allows users to create a new poll with multiple options.
+     Request Body:
+     json
+     Copy code
+     {
+     "question": "What is your favorite color?",
+     "options": ["Red", "Blue", "Green"]
+     }
+     Response:
+     json
+     Copy code
+     {
+     "id": 1,
+     "question": "What is your favorite color?",
+     "options": [
+     { "id": 1, "text": "Red", "votes": 0 },
+     { "id": 2, "text": "Blue", "votes": 0 },
+     { "id": 3, "text": "Green", "votes": 0 }
+     ]
+     }
+- 2. Vote on a Poll
+     Endpoint: POST /polls/:id/vote
+     Description: Allows users to vote on a specific option in a poll.
+     Request Body:
+     json
+     Copy code
+     {
+     "optionId": 1
+     }
+     Response: Status 200, "Vote submitted".
+- 3. Get Poll Results
+     Endpoint: GET /polls/:id
+     Description: Retrieves the current results for a poll.
+     Response:
+     json
+     Copy code
+     {
+     "id": 1,
+     "question": "What is your favorite color?",
+     "options": [
+     { "id": 1, "text": "Red", "votes": 5 },
+     { "id": 2, "text": "Blue", "votes": 3 },
+     { "id": 3, "text": "Green", "votes": 1 }
+     ]
+     }
+- 4. Leaderboard
+     Endpoint: GET /leaderboard
+     Description: Retrieves a global leaderboard ranking the most popular poll options across all active polls.
+     Response:
+     json
+     Copy code
+     [
+     { "pollId": 1, "optionId": 1, "text": "Red", "votes": 5 },
+     { "pollId": 1, "optionId": 2, "text": "Blue", "votes": 3 },
+     { "pollId": 2, "optionId": 1, "text": "Pizza", "votes": 10 }
+     ]
 
 ## Real-Time Updates with WebSockets
 
